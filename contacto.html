@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Contacto</title>
+</head>
+<body>
+	<form method="POST" action="enviar.php">
+	<!-- 2 protocolos: post y get. post lo hace de manera invisible al usuario, recolecta la info y de manera invisibl la manda al servidor para ser procesada. get traslada la informacion a través de una URL. Mercado Libre por ejemplo. "Action" ejecuta lo que tiene que hacer el formulario del lado de backend. -->
+		<label for="nombre">Nombre*: </label>
+		<!-- el atributo for tiene que tener siempre el mismo nombre que el ID. o si no tiene ID iene que tener el atributo "Name" -->
+		<input type="text" name="nombre" placeholder="Escribí tu nombre" required>
+		<!-- type: qué tipo de información nosotros estamos esperando. id: único identificador por página. 
+		Atributos:
+		type
+		id
+		placeholder
+		required -->
+		<br>
+		<label for="correo">Email*: </label>
+		<input type="email" name="correo" placeholder="Escribí tu mail" required>
+		<br>
+		<label for="edad">Edad: </label>
+		<input type="number" name="edad" placeholder="Ingresar edad">
+		<br>
+		<!-- Friccion: obstaculos que tiene el usuario a la hora de llegar a lo que quiere. por eso no es necesario usar tanto el "required", porque aumenta el porcentaje de fricción. EDAD: se puede agregar el atributo min="0" para que exista un mínimo de edad. -->
+		<label for="fecha">Fecha de nacimiento: </label>
+		<input type="date" name="fecha">
+		<br>
+		<!-- con date en html 5 hay un dropdown box en donde se puede seleccionar la fecha. no es necesario usar placeholder text por este motivo. solamente en chrome, no funciona con Safari o con Firefox-->
+		<label for="provincia">Provincia: </label>
+		<select name="provincia">
+			<option value="BA">Buenos Aires</option>
+			<option value="ER">Entre Ríos</option>
+			<option value="SF">Santa Fe</option>
+		</select>
+		<br>
+
+		<input type="checkbox" name="terms" required> <label for="terms">Acepto términos y condiciones</label>.
+		<!-- para que aparezca como checkeada automáticamente ponés checked="true" como atributo y valor de atributo respectivamente. -->
+		<br>
+
+		<label for="pedido"></label>
+		<input type="radio" name="pedido" value="envio">Envío a domicilio<br>
+		<input type="radio" name="pedido" value="retiro">Retirar por tienda<br>
+
+		<label for="mensaje">Dejanos tu mensaje: </label><br>
+		<textarea name="mensaje" cols="30" rows="10"></textarea><br>
+		<input type="file"><br> <!-- la opción para seleccionar archivo -->
+		<input type="submit" value="Enviar">
+
+	</form>
+</body>
+</html>
